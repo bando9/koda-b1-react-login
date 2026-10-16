@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Input from "./components/input";
+import { Link } from "react-router";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -46,6 +47,13 @@ function App() {
           Login
         </button>
       </form>
+      <p className="mt-5">
+        belum punya akun? silahkan{" "}
+        <Link to="/register" className="underline hover:bg-slate-200 p-1">
+          register
+        </Link>
+        .
+      </p>
     </div>
   );
 }
