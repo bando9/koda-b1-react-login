@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Input from "./components/input";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -23,32 +24,20 @@ function App() {
       <h1 className="text-xl">Login</h1>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
-        <div className="flex flex-col space-y-2">
-          <label htmlFor="username">Username</label>
-          <input
-            className="p-2 pl-3 border-2 border-slate-300 rounded-xl"
-            placeholder="Input user name"
-            id="username"
-            name="username"
-            type="text"
-            value={username}
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
+        <Input
+          name="username"
+          type="text"
+          value={username}
+          ph="input username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-        <div className="flex flex-col space-y-2">
-          <label htmlFor="password">Password</label>
-          <input
-            className="p-2 pl-3 border-2 border-slate-300 rounded-xl"
-            placeholder="******"
-            id="password"
-            name="password"
-            type="password"
-            ref={passwordRef}
-            required
-          />
-        </div>
+        <Input
+          name="password"
+          type="password"
+          ph="********"
+          ref={passwordRef}
+        />
 
         <button
           type="submit"
