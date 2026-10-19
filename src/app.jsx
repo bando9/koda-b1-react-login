@@ -20,6 +20,11 @@ function App() {
     passwordRef.current.value = "";
   }
 
+  function handleReset() {
+    setUsername("");
+    passwordRef.current.value = "";
+  }
+
   return (
     <div className="flex flex-col justify-center items-center mt-40">
       <h1 className="text-xl">Login</h1>
@@ -42,9 +47,17 @@ function App() {
 
         <button
           type="submit"
-          className="border-2 bg-slate-400 border-none px-4 py-2 rounded-xl w-full text-slate-50 hover:bg-slate-500 cursor-pointer"
+          className="button text-slate-50 bg-primary hover:bg-primary/80"
         >
           Login
+        </button>
+
+        <button
+          type="click"
+          onClick={handleReset}
+          className="button text-black bg-primary/20 hover:bg-primary/50"
+        >
+          Reset
         </button>
       </form>
       <p className="mt-5">

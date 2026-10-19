@@ -28,7 +28,7 @@ export default function Register() {
         className="flex w-full max-w-md flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
       >
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="name" className="text-sm font-medium text-slate-700">
+          <label htmlFor="name" className="input-label">
             Nama
           </label>
           <input
@@ -36,11 +36,7 @@ export default function Register() {
             type="text"
             placeholder="Masukkan nama"
             {...register("name", { required: true })}
-            className={`rounded-lg border px-3.5 py-2 text-sm text-slate-900 transition-colors placeholder:text-slate-400 focus:outline-none ${
-              errors.name
-                ? "border-rose-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
-                : "border-slate-300 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
-            }`}
+            className={`input ${errors.name ? "input-error" : "input-focus"}`}
           />
           {errors.name?.message && (
             <p className="text-xs font-medium text-rose-600">
@@ -50,7 +46,7 @@ export default function Register() {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="text-sm font-medium text-slate-700">
+          <label htmlFor="email" className="input-label">
             Email
           </label>
           <input
@@ -58,11 +54,7 @@ export default function Register() {
             type="email"
             placeholder="nama@email.com"
             {...register("email", { required: true })}
-            className={`rounded-lg border px-3.5 py-2 text-sm text-slate-900 transition-colors placeholder:text-slate-400 focus:outline-none ${
-              errors.email
-                ? "border-rose-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
-                : "border-slate-300 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
-            }`}
+            className={`input ${errors.email ? "input-error" : "input-focus"}`}
           />
           {errors.email?.message && (
             <p className="text-xs font-medium text-rose-600">
@@ -72,10 +64,7 @@ export default function Register() {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="password"
-            className="text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="password" className="input-label">
             Password
           </label>
           <input
@@ -83,10 +72,8 @@ export default function Register() {
             type="password"
             placeholder="••••••••"
             {...register("password", { required: true })}
-            className={`rounded-lg border px-3.5 py-2 text-sm text-slate-900 transition-colors placeholder:text-slate-400 focus:outline-none ${
-              errors.password
-                ? "border-rose-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
-                : "border-slate-300 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+            className={`input ${
+              errors.password ? "input-error" : "input-focus"
             }`}
           />
           {errors.password?.message && (
@@ -98,7 +85,7 @@ export default function Register() {
 
         <button
           type="submit"
-          className="mt-2 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 active:scale-[0.98] transition-all cursor-pointer"
+          className="button bg-primary text-slate-50 hover:bg-primary/80"
         >
           Simpan / Kirim
         </button>

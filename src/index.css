@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #ff5f22;
+}
+
+@layer components {
+  .button {
+    @apply border-2  border-none px-4 py-2 rounded-xl w-full cursor-pointer;
+  }
+
+  .input-label {
+    @apply text-sm font-medium text-slate-700;
+  }
+
+  .input {
+    @apply rounded-lg border px-3.5 py-2 text-sm text-slate-900 transition-colors placeholder:text-slate-400 focus:outline-none;
+  }
+
+  .input-error {
+    @apply border-rose-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20;
+  }
+
+  .input-focus {
+    @apply border-slate-300 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10;
+  }
+}
